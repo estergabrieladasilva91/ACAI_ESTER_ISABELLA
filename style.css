@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3e5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    max-width: 450px;
+    margin: auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #d1b5db;
+}
+
+h1 {
+    background-color: #6a1b9a;
+    color: white;
+    text-align: center;
+    padding: 22px 10px;
+    border-radius: 12px;
+    margin-top: 0;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #8e24aa;
+    font-size: 18px;
+}
+
+h2 {
+    color: #6a1b9a;
+    font-size: 19px;
+    margin-top: 25px;
+}
+
+select,
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 8px 0 12px;
+    border: 1px solid #ce93d8;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 15px;
+}
+
+#limite {
+    color: #8e24aa;
+    text-align: center;
+}
+
+.opcoes {
+    background-color: #f8effa;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.opcoes label {
+    display: block;
+    padding: 10px 5px;
+}
+
+input[type="checkbox"] {
+    accent-color: #7b1fa2;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 9px;
+    background-color: #7b1fa2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a148c;
+}
+
+.total {
+    background-color: #f3e5f5;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#resultado {
+    text-align: center;
+    font-size: 22px;
+}
+
+.rodape {
+    color: #777;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.mensagem {
+    color: #6a1b9a;
+    font-size: 13px;
+}
+
+#chuva-acai {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.acai-caindo {
+    position: absolute;
+    top: -50px;
+    font-size: 28px;
+    animation: cair 5s linear infinite;
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}

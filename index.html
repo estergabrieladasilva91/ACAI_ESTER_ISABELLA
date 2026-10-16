@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí do Bairro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="chuva-acai"></div>
+
+    <div class="container">
+        <h1>🍇 Açaí do Bairro 🍇</h1>
+        <p class="subtitulo">Monte seu Açaí do seu jeito!</p>
+
+        <h2>🥣 1. Escolha o tamanho</h2>
+
+        <select id="tamanho" onchange="verificarTamanho()">
+            <option value="10">300 ml - R$ 10,00</option>
+            <option value="15">500 ml - R$ 15,00</option>
+            <option value="20">700 ml - R$ 20,00</option>
+        </select>
+
+        <h2>🍓 2. Escolha os adicionais</h2>
+        <p id="limite">Limite de 2 adicionais</p>
+
+        <div class="opcoes">
+            <label><input type="checkbox" class="adicional" value="2" onchange="verificarAdicionais(this)"> 🍌 Banana - R$ 2,00</label>
+            <label><input type="checkbox" class="adicional" value="3" onchange="verificarAdicionais(this)"> 🌾 Granola - R$ 3,00</label>
+            <label><input type="checkbox" class="adicional" value="2" onchange="verificarAdicionais(this)"> 🥛 Leite em pó - R$ 2,00</label>
+            <label><input type="checkbox" class="adicional" value="3" onchange="verificarAdicionais(this)"> 🍯 Leite condensado - R$ 3,00</label>
+            <label><input type="checkbox" class="adicional" value="3" onchange="verificarAdicionais(this)"> 🍓 Morango - R$ 3,00</label>
+            <label><input type="checkbox" class="adicional" value="2" onchange="verificarAdicionais(this)"> 🥜 Paçoca - R$ 2,00</label>
+            <label><input type="checkbox" class="adicional" value="4" onchange="verificarAdicionais(this)"> 🍫 Nutella - R$ 4,00</label>
+            <label><input type="checkbox" class="adicional" value="3" onchange="verificarAdicionais(this)"> 🍪 Ovomaltine - R$ 3,00</label>
+            <label><input type="checkbox" class="adicional" value="3" onchange="verificarAdicionais(this)"> 🍫 Gotas de chocolate - R$ 3,00</label>
+            <label><input type="checkbox" class="adicional" value="2" onchange="verificarAdicionais(this)"> 🍬 Confete - R$ 2,00</label>
+        </div>
+
+        <h2>📍 3. Dados para entrega</h2>
+
+        <input type="text" id="nome" placeholder="Nome completo">
+
+        <input type="tel" id="telefone"
+        placeholder="(41) 99999-9999" maxlength="15"
+        oninput="mascaraTelefone()">
+
+        <label for="cep">CEP (opcional)</label>
+        <input type="text" id="cep"
+        placeholder="00000-000 (opcional)"
+        maxlength="9" oninput="mascaraCEP()"
+        onblur="buscarCEP()">
+
+        <p id="mensagemCEP" class="mensagem"></p>
+
+        <input type="text" id="endereco"
+        placeholder="Rua e número">
+
+        <select id="bairro" onchange="calcular()">
+            <option value="">Escolha seu bairro</option>
+            <option value="centro">Centro - R$ 5,00</option>
+            <option value="regiao">Região do Centro - R$ 6,00</option>
+            <option value="aguas claras">Águas Claras - R$ 8,00</option>
+            <option value="itaqui">Itaqui - R$ 10,00</option>
+            <option value="partenope">Partenope - R$ 10,00</option>
+        </select>
+
+        <button onclick="calcular()">Calcular pedido</button>
+
+        <div class="total">
+            <h2>🧾 Resumo do pedido</h2>
+            <p id="valorAcai">Açaí e adicionais: R$ 10,00</p>
+            <p id="valorEntrega">Taxa de entrega: R$ 0,00</p>
+            <h2 id="resultado">Total: R$ 10,00</h2>
+        </div>
+
+        <button onclick="confirmar()">Confirmar pedido</button>
+
+        <p class="rodape">💜 Obrigado por escolher o Açaí do Bairro! 💜</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
